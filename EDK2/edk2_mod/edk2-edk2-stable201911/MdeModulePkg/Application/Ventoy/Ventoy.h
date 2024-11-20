@@ -193,7 +193,7 @@ typedef struct ventoy_virt_chunk
   #error Unknown Processor Type
 #endif
 
-#define VENTOY_DEVICE_WARN 1
+#define VENTOY_DEVICE_WARN 0
 #define VTOY_WARNING  L"!!!!!!!!!!!!! WARNING !!!!!!!!!!!!!"
 
 typedef struct ventoy_sector_flag

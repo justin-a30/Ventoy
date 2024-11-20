@@ -535,7 +535,7 @@ static int ventoy_set_check_result(int ret, const char *msg)
     grub_env_set("VTOY_CHKDEV_RESULT_STRING", buf);
     grub_env_export("VTOY_CHKDEV_RESULT_STRING");
 
-    if (ret)
+    if (ret & 0x1000)
     {
         grub_cls();
         grub_printf(VTOY_WARNING"\n");
@@ -5017,7 +5017,7 @@ int ventoy_load_part_table(const char *diskname)
         ret = ventoy_check_official_device(dev);
         grub_device_close(dev);
 
-        if (ret)
+        if (ret & 0x1000)
         {
             return 1;
         }
